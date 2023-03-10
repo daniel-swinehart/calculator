@@ -1,0 +1,31 @@
+.page {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid blue;
+}
+
+.calc-body {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid green;
+}
+
+.calc-screen {
+    height: 10px;
+    width: 200px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+}
+
+.num-pad {
+    height: 200px;
+    width: 200px;
+    border: 2px solid red;
+}
