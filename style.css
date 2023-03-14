@@ -25,7 +25,25 @@
 }
 
 .num-pad {
+    display: flex;
+    flex-direction: row;
     height: 200px;
     width: 200px;
     border: 2px solid red;
+}
+
+.num-pad-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.num-pad-btn {
+    position: relative;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 2px;
+    border: 2px solid orange;
+    box-sizing: border-box;
 }
