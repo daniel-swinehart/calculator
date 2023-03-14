@@ -43,30 +43,31 @@ function clearEntry() {
 
 function clearEverything() {
     clearEntry();
-    firstValue = "";
-    secondValue = "";
-    operationSelected = "";
+    firstValue = "0"; //prevent error when evauluating with no input
+    secondValue = "0"; //prevent error when evauluating with no input
+    operationSelected = "+"; //prevent error when evauluating with no input
     isFirstEval = true;
     hasOperator = false;
 };
 
 function evaluate() {
     if (isFirstEval) {
-        secondValue = displayValue;
+        secondValue = calcScreen.textContent; /*Same as displayValue but prevents error with no input first */
     }
     clearEntry();
     display(operate(operationSelected, parseFloat(firstValue), parseFloat(secondValue)));
     firstValue = displayValue.toString();
     isFirstEval = false;
+    hasOperator = false;
 
 };
 
 const calcScreen = document.querySelector(".calc-screen");
 calcScreen.textContent = "0";
 let displayValue = "";
-let firstValue = "";
-let secondValue = "";
-let operationSelected = "";
+let firstValue = "0";
+let secondValue = "0";
+let operationSelected = "+";
 let isFirstEval = true;
 let hasOperator = false;
 
@@ -139,10 +140,14 @@ btnPlus.addEventListener('click', function(){
 
 const btnMinus = document.querySelector('#minus');
 btnMinus.addEventListener('click', function(){
+    if (hasOperator) {
+        evaluate();
+    }
     firstValue = displayValue;
     displayValue = "";
     operationSelected = "-";
     isFirstEval = true;
+    hasOperator = true;
     
 });
 
