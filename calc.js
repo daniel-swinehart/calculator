@@ -178,10 +178,15 @@ btnClearEntry.addEventListener('click', function(){
 
 const btnNeg = document.querySelector('#neg');
 btnNeg.addEventListener('click', function(){
-    display(1);
+    display("-");
 });
 
 const btnDecimal = document.querySelector('#decimal');
 btnDecimal.addEventListener('click', function(){
-    display(1);
+    display(".");
+});
+
+const btnClearAll = document.querySelector('#clearAll');
+btnClearAll.addEventListener('click', function(){
+    clearEverything();
 });
